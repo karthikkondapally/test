@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+# Copyright 2022-2023 The MathWorks, Inc.
+
+PS4='+ [\d \t] '
+set -x
 LOGS_FILESHARE_NAME="log"
 LOG_FILESHARE_MOUNT_PATH="/sharedcluster/log"
 
