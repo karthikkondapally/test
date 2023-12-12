@@ -1,5 +1,5 @@
-LOGS_FILESHARE_NAME="log"
-LOG_FILESHARE_MOUNT_PATH="/shared/log"
+LOGS_FILESHARE_NAME="shared"
+LOG_FILESHARE_MOUNT_PATH="/shared"
 
 sudo mkdir -p /etc/smbcredentials
 
@@ -33,5 +33,5 @@ else
     echo "Persisted file share does not exist."
 fi
 LOCAL_HOSTNAME=$(curl -s -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/compute/osProfile/computerName?api-version=2021-02-01&format=text")
-mkdir -p "${LOG_FILESHARE_MOUNT_PATH}/${LOCAL_HOSTNAME}"
-sed -i "s|^#LOGBASE=.*|LOGBASE=${LOG_FILESHARE_MOUNT_PATH}/${LOCAL_HOSTNAME}/mjs|g" /usr/local/matlab/toolbox/parallel/bin/mjs_def.sh
+mkdir -p "${LOG_FILESHARE_MOUNT_PATH}/log/${LOCAL_HOSTNAME}"
+sed -i "s|^#LOGBASE=.*|LOGBASE=${LOG_FILESHARE_MOUNT_PATH}/log/${LOCAL_HOSTNAME}/mjs|g" /usr/local/matlab/toolbox/parallel/bin/mjs_def.sh
