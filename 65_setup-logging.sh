@@ -1,5 +1,5 @@
 LOGS_FILESHARE_NAME="shared"
-LOG_FILESHARE_MOUNT_PATH="/shared/log"
+LOG_FILESHARE_MOUNT_PATH="/sharedcluster/log"
 
 sudo mkdir -p /etc/smbcredentials
 
